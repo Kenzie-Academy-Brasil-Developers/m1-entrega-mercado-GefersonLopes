@@ -88,3 +88,92 @@ const products = [
     imageDescription: "",
   },
 ];
+
+let mainFruits = document.querySelector(".fruits");
+
+let mainDrinks = document.querySelector(".drinks");
+
+let mainHygiene = document.querySelector(".hygiene");
+
+let ulFruits = document.createElement("ul");
+let ulDrinks = document.createElement("ul");
+let ulHyguiene = document.createElement("ul");
+
+
+products.forEach(element => {
+  let productCard = document.createElement("li");
+  let productMain = document.createElement("main");
+  let productCategory = document.createElement("h5");
+  let productTitle = document.createElement("h1");
+  let productPrice = document.createElement("strong");
+  let productImg = document.createElement("img");
+  if (element.category == "Frutas") {
+    mainFruits.appendChild(ulFruits);
+    ulFruits.appendChild(productCard);
+    productCard.append(productImg, productMain);
+    productMain.append(productTitle, productCategory, productPrice);
+    productCard.classList = "product";
+    productMain.classList = "product-main";
+    productTitle.innerText = element.title;
+    productTitle.classList = "product-title";
+    productCategory.innerText = element.category;
+    productCategory.classList = "product-category";
+    productPrice.innerText = `R$ ${element.price}`
+    productPrice.classList = "product-price";
+    if (element.image) {
+      productImg.src = element.image;
+    }
+    else {
+      productImg.src = "./img/products/no-img.svg";
+    }
+    productImg.alt = "Foto da fruta";
+    productImg.title = "Foto";
+    productImg.classList = "product-img";
+  }
+  if (element.category == "Bebidas") {
+    mainDrinks.appendChild(ulDrinks);
+    ulDrinks.appendChild(productCard);
+    productCard.append(productImg, productMain);
+    productMain.append(productTitle, productCategory, productPrice);
+    productCard.classList = "product";
+    productMain.classList = "product-main";
+    productTitle.innerText = element.title;
+    productTitle.classList = "product-title";
+    productCategory.innerText = element.category;
+    productCategory.classList = "product-category";
+    productPrice.innerText = `R$ ${element.price}`
+    productPrice.classList = "product-price";
+    if (element.image) {
+      productImg.src = element.image;
+    }
+    else {
+      productImg.src = "./img/products/no-img.svg";
+    }
+    productImg.alt = "Foto da fruta";
+    productImg.title = "Foto";
+    productImg.classList = "product-img";
+  }
+  if (element.category == "Higiene") {
+    mainHygiene.appendChild(ulHyguiene);
+    ulHyguiene.appendChild(productCard);
+    productCard.append(productImg, productMain);
+    productMain.append(productTitle, productCategory, productPrice);
+    productCard.classList = "product";
+    productMain.classList = "product-main";
+    productTitle.innerText = element.title;
+    productTitle.classList = "product-title";
+    productCategory.innerText = element.category;
+    productCategory.classList = "product-category";
+    productPrice.innerText = `R$ ${element.price}`
+    productPrice.classList = "product-price";
+    if (element.image) {
+      productImg.src = element.image;
+    }
+    else {
+      productImg.src = "./img/products/no-img.svg";
+    }
+    productImg.alt = "Foto da fruta";
+    productImg.title = "Foto";
+    productImg.classList = "product-img";
+  }
+});
